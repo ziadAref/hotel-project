@@ -1,38 +1,1421 @@
-.App {
-  text-align: center;
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+button{
+    color: white;
+    background-color: #0057FF;
+    padding: 9px 25px;
+    border: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button.getQuotationBtn{
+    background:#0036F6;
+    border: 1px solid #848484;
+    height: 42px;   
+    font-size: 14px;
+    color: #FFFFFF;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app{
+
+    width: 100%;
+    margin: 0 auto 0;
+
+}
+
+/* ------------------- */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 42px;
+    margin-bottom: 42px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+}
+
+.header h1{
+
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 39px;
+
+    color: #000000;
+}
+
+.header a{
+
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 21px;
+
+}
+
+/* ---------------------- */
+
+.details{
+    padding-bottom: 21px; 
+    border-bottom: 1px solid rgb(104, 103, 103);
+    padding-left: 4.5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 94%;
+}
+
+.details h1{
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 18px;
+    color: #000000;
+
+}
+.details h2{
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 28px;
+    color: #000000;
+}
+
+/* ------------- */
+
+
+.main{
+    display: flex;
+    justify-content:space-between;
+    margin-left: auto;
+    margin-right: auto;
+    width: 91.5%;
+}
+
+/* --------------- */
+
+.sidebar{
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.sidebar .hotelName{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+    
+}
+.sidebar .hotelName label{
+    margin-bottom: 5px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #444444;
+}
+.sidebar .hotelName input{
+    padding: 10px 10px;
+    width: 82%;
+    border: 0.5px solid rgb(211, 209, 209);
+    border-radius: 1px;
+    font-size: 15px;
+    font-weight: lighter;
+    color: #888888;
+
+}
+.sidebar .hotelName i{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    font-size: 10px;
+}
+.sidebar .popularFilter {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+
+}
+.sidebar .popularFilter label{
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #444444;
+    margin-bottom: 18px;
+}
+
+.sidebar .popularFilter div {
+    display: flex;
+    align-items: baseline ;
+    justify-content: flex-start;
+    gap: 3px;
+}
+.sidebar .popularFilter .div1 input{
+    background: #FFFFFF;
+    border: 1px solid #737373;
+}
+.sidebar .popularFilter .div1{
+    margin-bottom: 5px;
+}
+.sidebar .popularFilter div label{
+    font-size: 15px;
+    margin-bottom: 0;
+    color: rgb(122, 120, 120);
+    
+}
+
+.sidebar .priceFilter{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+}
+
+.sidebar .priceFilter label{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #444444;
+    margin-bottom: 18px;
+}
+
+.sidebar .priceFilter .ranger{
+    width: 250px;
+    border: 1px solid #000000;
+}
+.min-and-max{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 25px;
+}
+.sidebar .priceFilter .min-and-max div label{
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    color: #000000;
+}
+.sidebar .priceFilter input {
+    width: 110px;
+    border: 1px solid #000000;
+    padding: 4px 5px;
+}
+
+.sidebar .locationFilter{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+} 
+
+.sidebar .locationFilter label{
+
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #444444;
+    margin-bottom: 18px;
+}
+
+.sidebar .locationFilter div {
+    display: flex;
+    align-items: baseline ;
+    justify-content: flex-start;
+    gap: 3px;
+}
+
+.sidebar .locationFilter div label{
+    font-size: 15px;
+    margin-bottom: 0;
+    color: rgb(122, 120, 120);
+    
+}
+
+.sidebar .locationFilter .div3{
+    margin-bottom: 5px;
+}
+.sidebar .locationFilter .div4{
+    margin-bottom: 5px;
+}
+.sidebar .locationFilter .div5{
+    margin-bottom: 5px;
+}
+
+.sidebar .ratingFilter{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+} 
+
+.sidebar .ratingFilter label{
+  
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #444444;
+    margin-bottom: 18px;
+}
+
+.sidebar .ratingFilter div {
+    display: flex;
+    align-items: baseline ;
+    justify-content: flex-start;
+    gap: 3px;
+}
+
+.sidebar .ratingFilter div label{
+    font-size: 15px;
+    margin-bottom: 0;
+    color: rgb(122, 120, 120);
+    
+}
+
+.sidebar .ratingFilter .div7{
+    margin-bottom: 5px;
+}
+.sidebar .ratingFilter .div8{
+    margin-bottom: 5px;
+}
+.sidebar .ratingFilter .div9{
+    margin-bottom: 5px;
+}
+.sidebar .ratingFilter .div10{
+    margin-bottom: 5px;
+}
+.sidebar .ratingFilter .div11{
+    margin-bottom: 5px;
+}
+
+
+
+.sidebar .popularAmen{
+    display: flex;
+    flex-direction: column;
+    /* margin-bottom: 45px; */
+} 
+
+.sidebar .popularAmen label{
+   
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #444444;
+    margin-bottom: 18px;
+}
+
+.sidebar .popularAmen div {
+    display: flex;
+    align-items: baseline ;
+    justify-content: flex-start;
+    gap: 3px;
+}
+
+.sidebar .popularAmen div label{
+    font-size: 15px;
+    margin-bottom: 0;
+    color: rgb(122, 120, 120);
+    
+}
+
+
+.sidebar .popularAmen .div13{
+    margin-bottom: 5px;
+}
+.sidebar .popularAmen .div14{
+    margin-bottom: 5px;
+}
+.sidebar .popularAmen .div15{
+    margin-bottom: 5px;
+}
+.sidebar .popularAmen .div16{
+    margin-bottom: 5px;
+}
+.sidebar .popularAmen .div17{
+    margin-bottom: 5px;
+}
+.sidebar .popularAmen .div18{
+    margin-bottom: 5px;
+}
+.sidebar .popularAmen .div19{
+    margin-bottom: 5px;
+}
+.sidebar .popularAmen .div20{
+    margin-bottom: 5px;
+}
+
+
+/* ------------------------------ */
+
+.section{
+    width: 71%;
+    margin-top: 68px;
+
+}
+
+.section .productsHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 65px;
+    padding-right: 10px;
+}
+.section .productsHeader .sortProducts{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.section .productsHeader .sortProducts a{
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 17px;
+    color: #000000;
+}
+
+.section .allProducts{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+}
+
+.section .allProducts .product{
+    width: 31%;
+    text-align: center;
+    background: #FFFFFF;
+    border: 1px solid #DBDBDB;
+    border-radius: 5px;
+    
+}
+.section .allProducts .product .description p{
+  text-align: start;
+  font-weight: 300;
+  font-size: 11px;
+  color: #000000;
+  margin-bottom: 20px;
+}
+
+.section .allProducts .product .productName{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    width: 90%;
+    height: 20%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 18px;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: center;
+
+    color: #000000;
+}
+.section .allProducts .product .productImg{
+    width: 100%;
+    margin-bottom: 20px;
+    
+}
+
+.section .allProducts .product .description {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 0.75px;
+}
+
+.detail{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #CACACA;
+    ;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 10px;
+    margin-bottom: 6px;
+}
+.seeDetailsBtn{
+    color: white;
+    background-color: #0057FF;
+    ;
+    padding: 9px 25px;
+    border: none;
+    font-size: 10px;   
+    width: 110px;
+    height: 30px;
+    margin-bottom: 17px;
+}
+
+.productPrice{
+    font-weight: 600;
+    font-size: 26px;
+    line-height: 31px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.productCurrency{
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+
+/* ------------ */
+/* ---------------- */
+
+
+.request{
+    background: #FFFFFF;
+    border: 0.5px solid #B5B5B5;
+    border-radius: 7px;
+    width: 70%;
+    margin: 65px auto 20px;
+    padding: 90px 391px 270px 65px;
+}
+
+
+.request p span{
+    font-weight: bold;
+    font-size: larger;
+ 
+}
+
+.request h2{
+    margin-bottom: 33px;
+    line-height: 42.36px;
+}
+
+.request .p1{
+    margin-bottom: 20px;
+} 
+
+
+
+/* ------------ */
+/* ---------------- */
+
+
+.blue{
+    width: 100%;
+    height: 92px;
+    background-color: #100E86;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.blue button{
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    background: #1CB1F1;
+    width: 159px;
+    height: 65px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 23px;
+    text-align: center;
+    color: #FFFFFF;
+    
+}
+
+
+
+/* ------------- */
+
+
+.productImage{
+    width: 78%;
+    margin: 0 auto 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2%;
+    margin-bottom: 20px;
+}
+
+.productImage .firstImage{  
+    width: 50%;
+    height: 360px;
+    background: #D9D9D9;
+}
+
+.productImage .lastImages{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6%;
+    width: 50%;
+    height: 360px;
+
+}
+
+.productImage .lastImages div{
+    width: 49.5%;
+    height: 49.7%;
+    background-color: #D9D9D9;
+}
+
+
+/* ------------- */
+
+
+.productDescribe{
+
+    width: 78%;
+    border: 1px solid #CACACA;
+    margin: 0 auto 0;
+    margin-bottom: 45px;
+    padding: 24px 0 23px 58px;
+}
+
+.productDescribe h1 {
+    display: inline-block;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 42px;
+    margin-right: 10px;
+    margin-bottom: 8px;
+}
+
+.productDescribe div i{
+    font-size: 50px;
+    color: #0036F6;
+}
+
+.productDescribe .p1{
+    margin-bottom: 19px;
+    font-weight: 400;
+    font-size: 16.5px;
+    line-height: 22px;
+    color: #000000;
+}
+
+.productDescribe .p2{
+    font-weight: 400;
+    font-size: 16.5px;
+    line-height: 20px;
+    padding-right: 270px;
+}
+
+
+/* --------------- */
+
+
+.productLocation{
+    width: 78%;
+    border: 1px solid #CACACA;
+    margin: 0 auto 0;
+    margin-bottom: 45px;
+    padding: 24px 210px 23px 58px;
+}
+
+.productLocation h1{
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 24px;
+}
+
+
+.productLocation .div1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productLocation .div1 .div2{
+    width: 23%;
+    height: 70px;
+}
+
+.productLocation .div1 .div2 div{
+    height: 25px;
+    width: 35px;
+    margin-left: 50%;
+    margin-bottom: 20px;
+    transform: translate(-50%);
+    background-color: #c6c1c1;
+    
+
+}
+
+.productLocation .div1 .div2 p{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+}
+
+
+/* ------------- */
+
+
+.productMore{
+    width: 78%;
+    border: 1px solid #CACACA;
+    margin: 0 auto 0;
+    margin-bottom: 45px;
+    padding: 34px 210px 23px 58px;
+}
+
+.productMore h1{
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 24px;
+    margin-top: 10px;
+}
+
+.productMore .table{
+    border: 1px solid #CACACA;
+    display: flex;
+    flex-direction: column;
+    width: 87%;
+    margin-bottom: 30px;
+
+}
+
+.productMore .table .row{
+    display: flex;
+    justify-content: space-between;
+}
+.productMore .table .row div{
+    padding: 8px 10px;
+    border: 1px solid #CACACA;
+    font-size: 17px;
+
+}
+.productMore .table .row .col1{
+    width: 60%;
+}
+.productMore .table .row .col2{
+    width: 12%;
+    text-align: center;
+}
+.productMore .table .row .col3{
+    width: 28%;
+    text-align: center;
+}
+
+.proceedBtn{
+    
+    background-color: #0013BB;
+    width: 180px;
+    height: 49px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    margin-left: 8px;
+
+}
+
+.productMore .p1{
+    margin-bottom: 25px;
+    margin-left: 8px;
+}
+
+.productMore .p2{
+    margin-left: 8px;
+    margin-bottom: 25px;
+}
+
+/* ------------------- */
+
+
+.productMoreMore{
+        width: 78%;
+        border: 1px solid #CACACA;
+        margin: 0 auto 0;
+        margin-bottom: 60px;
+        padding: 45px 35px 45px 35px;
+        display: flex;
+        flex-direction: column;
+}
+
+
+.productMoreMore .div2{
+    padding-left: 25px;
+    width: 100%;
+    padding-top: 15px;
+}
+
+.productMoreMore .div1 {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #727171;
+    padding-bottom: 30px;
+    padding-top: 5px;
+    padding-left: 25px;
+    width: 100%;
+    /* margin-bottom: 20px; */
+}
+
+.productMoreMore .div1 .div11 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 15px;
+    margin-bottom: 20px;
+
+}
+.productMoreMore .div2 .div21 {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 15px;   
+    margin-bottom: 20px;
+
+}
+
+.productMoreMore div div div{
+    width: 40%;
+}
+
+.productMoreMore div h1{
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    margin-bottom: 30px;
+}
+
+.productMoreMore div div div h2{
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+    margin-bottom: 13px;
+}
+.productMoreMore div div div p{
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 16px;
+    margin-bottom: 10px;
+
+}
+
+
+
+
+/* -------------------- */
+
+
+.productMap{
+    width: 75%;
+    /* height: 500px; */
+    /* border: 1px solid #CACACA; */
+    /* background-color: #D9D9D9; */
+    margin: 0 auto 0;
+    margin-bottom: 45px;
+    padding: 45px 35px 45px 35px;
+}
+
+.productMap p{
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 27px;
+    margin-bottom: 30px;
+
+}
+
+.productMap .map{
+    width: 100%;
+    height: 420px;
+    background-color: #D9D9D9;
+
+}
+
+
+
+/* ------------------- */
+/* -----------------*/ 
+
+
+.booking{
+    display: flex;
+    justify-content: space-between;
+    width: 75%;
+    margin: 125px auto 0 auto;
+    gap: 20px;
+}
+
+.booking .left{
+    width: 85%;
+    margin-bottom: 400px;
+
+}
+
+.booking .left .div1 {
+    background: #FFFFFF;
+    border: 0.2px solid rgba(151, 155, 158, 0.3);
+    box-shadow: 0px 3px 6px rgba(208, 211, 244, 0.25);
+    border-radius: 5px;
+    padding: 30px 100px 30px 25px;
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+}
+
+.booking .left .div1 form{
+    position: relative;
+    width: 93%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 15px;
+    margin-bottom: 15px;
+    /* flex-direction: column; */
+}
+
+.booking .left .div1 label{
+    display: block;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+}
+
+.booking .left .div1 form input{
+    margin-top: 10px;
+    padding: 5px 0 18px 7px;
+    font-size: 10px;
+    border: 0.5px solid #CECECE;
+    border-radius: 2.5px;
+}
+
+.fn{
+    width: 48.5%;
+    margin-right: 3%;
+}
+.ln{
+    width: 48.5%;
+
+}
+.em{
+    width: 100%;
+    /* margin-right: 3%; */
+}
+.cc{
+    width: 15%;
+    margin-right: 0.5%;
+    z-index: 999;
+    position: absolute;
+    bottom: 0;
+}
+.phn{
+    width: 85.5%;
+    margin-left: 14.5%;
+}
+
+
+.booking .left .div1 label{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+
+
+
+
+.booking .left .div2{
+    background: #FFFFFF;
+    border: 0.2px solid rgba(151, 155, 158, 0.3);
+    box-shadow: 0px 3px 6px rgba(208, 211, 244, 0.25);
+    border-radius: 5px;
+    padding: 30px 30px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin-top: 30px;
+    
+}
+
+.booking .left .div2 label{
+    margin-top: 7px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+}
+
+
+.room1 , .room2, .room3{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-left: 5px;
+    border: 0.2px solid rgba(227, 230, 233, 0.3);
+    box-shadow: 0px 3px 6px rgba(183, 186, 218, 0.25);
+    border-radius: 2.5px;
+    margin-bottom: 40px;
+}
+
+
+
+
+.left-div{
+
+    width: 10%;
+    height: 120px;
+    background-color: #F4F4F4;
+    width: 47px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2.5px;
+    
+}
+
+.left-div-text{
+    transform: rotate(0.75turn);
+  
+}
+
+.right-div{
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.top-right-div{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: -15px;
+    width: 100%;
+    /* height: 6%; */
+    padding-right: 10px;
+}
+
+.top-right-div .p1{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 19px;
+    margin-bottom: 3px;
+}
+
+.top-right-div .p2{
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.top-right-div a{
+    text-decoration: none;
+    color: #A80000;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 15px;
+}
+
+.center-right-div{
+    padding-top: 20px;
+    width: 100%;
+    border-top: 0.5px solid #CECECE;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  
+}
+
+.center-right-div form{
+    width: 100%;
+}
+
+.center-right-div form .input1, .input2{
+    margin-top: 10px;
+    padding: 5px 0 18px 7px;
+    font-size: 10px;
+    width: 29%;
+    margin-right: 3%;
+    border: 0.5px solid #CECECE;
+    border-radius: 2.5px;
+}
+
+
+.center-right-div form .input3{
+    margin-top: 10px;
+    padding: 3.5px 0 17px 7px;
+    font-size: 10px;
+    width: 35%;
+    border: 0.5px solid #CECECE;
+    border-radius: 2.5px;}
+
+
+.bottom-right-div{
+    display: flex;
+    justify-content: flex-start;
+    align-items:center;
+    gap: 3px;
+    height: 13px;
+    
+}
+
+
+.bottom-right-div #checkme{
+    font-weight: 300;
+    font-size: 10px;
+    line-height: 9px;
+    margin: 2px 0 2px;
+}
+
+
+
+.booking .left .div3{
+    width: 80%;
+    margin-top: 40px;
+    
+}
+
+.booking .left .div3 form{
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    
 }
 
-.App-link {
-  color: #61dafb;
+.booking .left .div3 form label{
+   margin-left: 15px;
+   margin-bottom: 5px;
+   font-weight: 400;
+   font-size: 18px;
+   line-height: 21px;
+        
+}
+.booking .left .div3 form label span{
+    font-size: smaller;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.booking .left .div3 form textarea{
+    height: 125px;
+    border: 1.4px solid #919191;
+
+    border-radius: 0;
 }
+
+
+.booking .left .div4{
+    background: #FFFFFF;
+    border: 0.2px solid rgba(151, 155, 158, 0.3);
+    box-shadow: 0px 3px 6px rgba(208, 211, 244, 0.25);
+    border-radius: 5px;
+    padding: 30px 30px 10px 20px;
+    display: flex;
+    flex-direction: column;
+    width: 98%;
+    margin-top: 30px;
+}
+
+.booking .left .div4 label{
+    margin-top: 7px;
+    margin-bottom: 35px;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 21px;
+}
+
+.booking .left .div4 ul li{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    margin-left: 25px;
+}
+
+.booking .left .div4 ul{
+    margin-bottom: 35px;
+}
+
+
+.submitRequestBtn{
+    /* background: #001DB5; */
+    width: 175px;
+    height: 53px;
+    height: 50px;
+    font-weight: 500;
+    font-size: 14px;
+    margin-left: 12px;
+    background: #012C9B;
+    box-shadow: 0px 2px 6px rgba(111, 133, 189, 0.5);
+    border-radius: 2.5px;
+    margin-bottom: 35px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.booking .right {
+    width: 35%;
+    height: 50%;
+    margin-right: 100px;
+    background: #FFFFFF;
+    border: 0.2px solid rgba(151, 155, 158, 0.3);
+    box-shadow: 0px 3px 6px rgba(208, 211, 244, 0.25);
+    border-radius: 5px;
+    padding: 15px;
+    margin-right: -22px;
+    margin-left: 22px;
+}
+
+
+.booking .right img{
+    width: 100%;
+    margin-bottom: 13px;
+
+}
+
+.right h2{
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 22px;
+    margin-bottom: 17.5px;
+}
+
+.right .p1{
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    margin-bottom: 70px;
+}
+
+
+
+
+/* ----------------------------- */
+/* ----------------------------- */
+
+
+
+
+
+
+
+.proceedPage{
+    width: 65%;
+    margin: 25px 0 0 155px;
+}
+
+.proceedPage .div1{
+    margin-left: 30px;
+    margin-top: 130px;
+}
+
+.proceedPage .p1{
+    margin-bottom: 78px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.addRoomForm{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+.addRoomBtn{
+    background: #001DB5;
+    width: 155px;
+    height: 40px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    margin-top: 30px;
+
+}
+
+.addRoomForm .div11{
+    display: flex;
+    align-items: center;
+    justify-content:flex-start;
+    gap: 14px;
+}
+
+.addRoomForm .div11 div label{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    
+}
+.addRoomForm .div11 div input{
+    padding: 9px;
+    margin-top: 9px;
+}
+
+
+.addRoomForm .div11 div #one{
+    width: 100%;
+}
+.addRoomForm .div11 div #two{
+    width: 100%;
+}
+.addRoomForm .div11 div #three{
+    width: 100%;
+}
+.addRoomForm .div11 div{
+    width: 250px;
+}
+.addRoomForm .div11 #g{
+    width: 200px;
+}
+.addRoomForm .div11 #gg{
+    width: 170px;
+}
+
+
+.proceedPage .div2{
+    padding-left: 40px;
+    padding-top: 15px;
+    margin-top: 75px;
+    border: 1px solid #CACACA;
+
+}
+
+.div2 .p2{
+    margin-bottom: 30px;
+}
+
+.div-i{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+    width: 30%;
+    
+}
+
+.div-i input{
+    padding: 9px;
+    margin-top: 5px;
+}
+
+
+.div-ii{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 35px;
+    margin-top: 20px;
+}
+
+.div-ii label{
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: 16px;
+}
+
+.div-ii div{
+    display: flex;
+    align-items: baseline ;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.div-ii div input{
+    background: #FFFFFF;
+    border: 1px solid #737373;
+    margin-left: 10px;
+}
+
+
+.div-iii{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    width: 30%;
+}
+
+.div-iii input{
+    padding: 9px;
+    margin-top: 5px;
+}
+
+.div-iii textarea{
+    width: 260%;
+    height: 150px;
+    margin-top: 5px;
+}
+
+
+.proceedPage .div2{
+    margin-bottom: 65px;
+}
+
+.proceedPage .div3{
+    margin-left: 40px;
+    margin-bottom: 100px;
+
+}
+
+.div3 .p1{
+    width: 75%;
+    font-weight: 400;
+    font-size: 17px;
+    margin-bottom: 55px;
+}
+
+
+.div3 .p2{
+    width: 80%;
+    font-size: 17px;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+.proceedBtn{
+    background: #001DB5;
+    /* width: 155px; */
+    height: 50px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    margin-left: 0;
+    box-shadow: 0px 2px 6px rgba(111, 133, 189, 0.5);
+    border-radius: 2.5px;
+}
+
+
+
+
+
+/* ------------------------- */
+/* ------------------------- */
+/* ------------------------- */
